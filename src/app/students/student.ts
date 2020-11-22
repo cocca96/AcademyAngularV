@@ -1,4 +1,5 @@
-import { IEnrollment } from '../enrollments/enrollment-component/IEnrollment';
+
+import { IEnrollment } from '../enrollments/IEnrollment';
 import { IStudent } from './IStudent';
 
 export class Student implements IStudent {

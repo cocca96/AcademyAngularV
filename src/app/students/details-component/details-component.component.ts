@@ -10,7 +10,7 @@ import { IStudent } from '../IStudent';
 export class DetailsComponentComponent implements OnInit {
   title: "Student details";
   errorMessage: " ";
-  enter:boolean=false;
+  
   student: IStudent | undefined;
   constructor(private studentService: studentService, private route: ActivatedRoute, private router: Router) { }
 
@@ -20,8 +20,9 @@ export class DetailsComponentComponent implements OnInit {
       console.log(id);
       const param = +id;
       this.getStudent(param);
+     
     }
-    console.log("non entra" + id);
+ 
 
   }
   delete(id: number): void {
@@ -42,10 +43,7 @@ export class DetailsComponentComponent implements OnInit {
   onBack(): void {
     this.router.navigate(['/students']);
   }
-  goToForm(): void {
-    this.router.navigate(['/studentIscr']);
-    this.enter=true;
-  }
+
 
 
 

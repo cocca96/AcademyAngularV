@@ -1,0 +1,59 @@
+<h2 style="text-align:center">Iscrizione</h2>
+<mat-card style="margin-top:20px">
+  <form #signupForm="ngForm">
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <mat-label for="idStudente">Id studente</mat-label>
+          <input class="form-control" placeholder="idstudente" type="number" style="-moz-appearance: textfield" 
+          #idStudenteVar="ngModel"
+          [ngClass]="{'is-invalid': (idStudenteVar.touched || idStudenteVar.dirty) && !idStudenteVar.valid }" [(ngModel)]="enrollment.idStudente"   class="form-control" name="idStudente">
+          
+        </div>
+      </div>
+     <div class="col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <mat-label for="nomeCorso">Corso</mat-label>
+        <select class="form-control" [(ngModel)]="enrollment.idCorso" name="idCorso">
+          <option *ngFor="let c of courses"  value="{{c.id}}" >{{c.nome}}</option>
+        </select>        
+      </div>
+     </div>    
+    </div>
+    <div>
+      <button mat-flat-button color="primary"(click)="addEnrollment()">Aggiungi</button>
+    </div>
+  </form>
+  </mat-card>
+  <br>Dirty: {{ signupForm.dirty }}
+<br>Touched: {{ signupForm.touched }}
+<br>Valid: {{ signupForm.valid }}
+
+
+
+
+<!-- FORM SOLO BOOTSTRAP
+<h2 style="text-align:center">Iscrizione</h2>
+<div class="card card-header" style="margin-top:20px">
+  <form>
+    <div class="row">
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="form-group">
+          <label for="idStudente">Id studente</label>
+          <input placeholder="idstudente" type="number" style="-moz-appearance: textfield" [(ngModel)]="enrollment.idStudente"   class="form-control" name="idStudente">
+        </div>
+      </div>
+     <div class="col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <label for="nomeCorso">Corso</label>
+        <select class="form-control" [(ngModel)]="enrollment.idCorso" name="idCorso">
+          <option *ngFor="let c of courses"  value="{{c.id}}" >{{c.nome}}</option>
+        </select>        
+      </div>
+     </div>    
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="addEnrollment()">Aggiungi</button>
+    </div>
+  </form>
+</div> -->

@@ -54,10 +54,10 @@
             <button class='btn btn-outline-secondary' (click)='delete(student.id)' style='width:80px'>
                 <i class='fa fa-chevron-left'></i> Delete
             </button>
-             <button class='btn btn-outline-secondary' (click)='goToForm()' style='width:80px'>
+             <button class='btn btn-outline-secondary' routerLinkActive="active" [routerLink]="['/studentIscr',student.id]" style='width:80px'>
                
                 
-                <i class='fa fa-chevron-left'></i> Modifica
+                <i class='fa fa-chevron-left'></i>Modify
             </button> 
         </div>
         

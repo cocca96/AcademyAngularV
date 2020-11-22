@@ -1,4 +1,5 @@
-import { IEnrollment } from '../enrollments/enrollment-component/IEnrollment';
+import { IEnrollment } from '../enrollments/IEnrollment';
+
 
 export interface IStudent{
     id:number;
